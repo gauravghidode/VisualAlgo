@@ -1,0 +1,62 @@
+.arr-container{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    height: 40vh;
+}
+
+h3{
+    position: absolute;
+    left:5px;
+    padding: 5px;
+}
+
+.arr-bar {
+    width: 20px;
+    display: inline-block;
+    margin: 0 1px;
+}
+
+.aux-container{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.aux-bar {
+    width: 20px;
+    display: inline-block;
+    margin: 0 1px;
+}
+
+.move-up{
+    transition-property: all;
+    animation: up 1ms;
+
+}
+
+.sort-btn{
+    padding: 7px 10px;
+    background-color: rgb(5, 80, 105);
+    color: white;
+    border: none;
+    border-radius: 5px ;
+    font-size: medium;
+}
+
+.sort-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+@keyframes up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-30vh);
+    }
+}

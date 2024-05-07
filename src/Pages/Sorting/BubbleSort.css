@@ -1,0 +1,16 @@
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arr-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.arr-bar {
+    width: 20px;
+    display: inline-block;
+    margin: 0 1px;
+}
