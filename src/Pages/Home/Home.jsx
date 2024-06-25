@@ -15,7 +15,7 @@ const Home = () => {
                         <NavLink className='btn btn-primary m-2' to='/bubblesort'>Bubble Sort</NavLink>
                         <NavLink className='btn btn-primary m-2' to='/mergesort'>Merge sort</NavLink>
                         <NavLink className='btn btn-primary m-2' to='/insertionsort'>Insertion Sort</NavLink>
-                        <NavLink className='btn btn-primary m-2' to='/selectionsort'>Selection Sort</NavLink>
+                        {/* <NavLink className='btn btn-primary m-2' to='/selectionsort'>Selection Sort</NavLink> */}
                     </div>
                 </div>
             </div>

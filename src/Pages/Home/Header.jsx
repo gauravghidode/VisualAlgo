@@ -13,7 +13,7 @@ const Header = () => {
                     <li><NavLink to='/bubblesort'>Bubble Sort</NavLink></li>
                     <li><NavLink to='/mergesort'>Merge sort</NavLink></li>
                     <li><NavLink to='/insertionsort'>Insertion Sort</NavLink></li>
-                    <li><NavLink to='/selectionsort'>Selection Sort</NavLink></li>
+                    {/* <li><NavLink to='/selectionsort'>Selection Sort</NavLink></li> */}
                 </ul>
             </div>
   </div>
