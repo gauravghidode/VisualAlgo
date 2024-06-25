@@ -3,12 +3,12 @@ import { useState } from 'react';
 import './BubbleSort.css'
 import { getbubbleSortAnimation } from '../../Algorithms/bubblesort';
 
-const LENGTH = 200;
+const LENGTH = 50;
 
 const PRIMARY_COLOR = "skyblue";
 const SECONDARY_COLOR = 'red';
 const FINAL_COLOR = 'purple';
-const TIME = 2;
+const TIME = 5;
 
 const BubbleSort = () => {
 
@@ -31,6 +31,7 @@ const BubbleSort = () => {
     }
 
     function BubbleSort() {
+        setLoading(true);
         const arr1 = arr.slice();
         const animations = getbubbleSortAnimation(arr1);
 
@@ -57,13 +58,14 @@ const BubbleSort = () => {
         }
     }
 
+
     useState(() => {
         resetArr();
     })
 
     return (
         <>
-            <h1>Bubble Sort</h1>
+            <h1 className='text-3xl p-2'>Bubble<button onClick={BubbleSort} disabled={loading} className='btn btn-primary btn-md m-2'>Sort</button> <button onClick={()=>window.location.reload()} className='btn btn-accent'>Refresh</button></h1>
             <div className="arr-container">
                 {
                     arr?.map((element, index) => (
@@ -73,7 +75,7 @@ const BubbleSort = () => {
                     ))
                 }
             </div>
-            <button onClick={BubbleSort}>Bubble Sort</button>
+            {/* <button onClick={BubbleSort}>Bubble Sort</button> */}
         </>
     )
 }

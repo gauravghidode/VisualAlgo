@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import './Sorting.css'
 import { getMergeSortAnimations } from '../../Algorithms/mergesort';
+import { getInsertionSortAnimation } from '../../Algorithms/insertionsort';
 
 const PRIMARY_COLOR = "lightskyblue";
 const SECONDARY_COLOR = "red";
-const LENGTH = 200;
-const TIME = 10;
+const LENGTH = 40;
+const TIME = 50;
 
 const Sorting = () => {
 
     const [arr, setArr] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [disabe, setDisabe] = useState(false);
     const [auxArr, setAuxArr] = useState(Array(LENGTH).fill(0));
 
     function randomIntFromInterval(min, max) {
@@ -29,6 +31,7 @@ const Sorting = () => {
     }
 
     async function mergeSortStarter() {
+        setDisabe(true);
         const arr1 = []
         for (let i = 0; i < arr.length; i++) {
             arr1.push(arr[i]);
@@ -85,6 +88,9 @@ const Sorting = () => {
         }
     }
 
+
+
+
     useEffect(() => {
         resetArr();
     }, []);
@@ -93,8 +99,8 @@ const Sorting = () => {
         <div>{
             !loading &&
             <>
-                <h1>Merge Sort</h1>
-                <h3>Main array</h3>
+                <h1 className='text-2xl p-2'>Merge <button disabled={disabe} onClick={mergeSortStarter} className='btn btn-primary btn-md m-2'>Sort</button> <button onClick={()=>window.location.reload()} className='btn btn-accent btn-md'>Refresh</button></h1>
+                <h3>Main <br /> Array</h3>
                 <div className="arr-container">
                     {
                         arr?.map((element, index) => (
@@ -104,7 +110,7 @@ const Sorting = () => {
                         ))
                     }
                 </div>
-                <h3>Auxilliary Array</h3>
+                <h3>Auxilliary <br /> Array</h3>
                 <div className="arr-container" id='temp-array'>
                     {
                         auxArr?.map((element, index) => (
@@ -114,7 +120,7 @@ const Sorting = () => {
                         ))
                     }
                 </div>
-                <button className='sort-btn' onClick={mergeSortStarter}>Sort</button>
+                {/* <button className='sort-btn' onClick={mergeSortStarter}>Sort</button> */}
             </>
         }
         </div>
